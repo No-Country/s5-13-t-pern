@@ -5,7 +5,12 @@
     },
     "extends": [
         "plugin:react/recommended",
+<<<<<<< HEAD
         "standard"
+=======
+        "standard",
+        "prettier"
+>>>>>>> 39f5b1a572f873717192bfc0b8167e276638d286
     ],
     "overrides": [
     ],
