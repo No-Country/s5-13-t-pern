@@ -8,11 +8,21 @@
     "start": "lerna run start --stream",
     "build": "lerna run build --stream",
     "test": "lerna run test --stream",
+    "prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
+    "lint": "eslint \"**/*.js\" --ignore-path .gitignore",
     "co": "sui-mono commit"
   },
   "devDependencies": {
+    "@s-ui/mono": "^2.34.0",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.10",
+    "husky": "^8.0.2",
     "nodemon": "^2.0.6",
-    "@s-ui/mono": "^2.34.0"
+    "prettier": "^2.7.1"
   }
-
 }
