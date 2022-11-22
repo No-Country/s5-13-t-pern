@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/No-Country/s5-13-t-pern/issues"
   },
-  "homepage": "https://github.com/No-Country/s5-13-t-pern#readme"
+  "homepage": "https://github.com/No-Country/s5-13-t-pern#readme",
+  "dependencies": {
+    "puppeteer": "^19.2.2"
+  }
 }
