@@ -6,7 +6,8 @@ import JobsContainer from '../components/Jobs/JobsContainer'
 const Jobs = (jobs) => {
     return (
         <Container
-            maxWidth="xl"
+            disableGutters
+            maxWidth={false}
             sx={{
                 display: 'flex',
                 justifyContent: 'center',
@@ -14,10 +15,8 @@ const Jobs = (jobs) => {
                 minHeight: 'calc(100vh - 210px - 69px)',
             }}
         >
-            <Grid container px={6}>
-                <Grid item xs={12}>
-                    <JobsContainer jobs={jobs} />
-                </Grid>
+            <Grid item xs={12}>
+                <JobsContainer jobs={jobs} />
             </Grid>
         </Container>
     )

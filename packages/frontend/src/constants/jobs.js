@@ -1,4 +1,4 @@
-const jobs = [
+/* const jobs = [
     {
         id: '1',
         job: 'Electricista',
@@ -34,5 +34,12 @@ const jobs = [
         date: '21/11/2022',
     },
 ]
+
+export default jobs
+ */
+
+/* const jobs */
+
+const jobs = ['IDdeveloper', 'panadera', 'verdulero', 'contadora']
 
 export default jobs

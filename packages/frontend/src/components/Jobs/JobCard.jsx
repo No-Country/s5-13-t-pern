@@ -13,7 +13,7 @@ const JobCard = (jobs) => {
             sx={{
                 width: '360px',
                 height: '144px',
-                marginTop: '464px',
+                marginTop: '450px',
                 marginLeft: '156px',
                 borderRadius: '10px',
                 bgcolor: '#E0E0E0',
@@ -148,7 +148,7 @@ const JobCard = (jobs) => {
                             lineHeight: '16px',
                             color: '#858585',
                             marginTop: '110px',
-                            marginLeft: '280px',
+                            marginLeft: '260px',
                         }}
                     >
                         21/11/2022
