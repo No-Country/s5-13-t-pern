@@ -1,29 +1,19 @@
 {
   "name": "s5-13-t-pern",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "workspaces": [
+    "packages/backend",
+    "packages/frontend"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lerna run start --stream",
+    "build": "lerna run build --stream",
+    "test": "lerna run test --stream",
+    "prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
     "lint": "eslint \"**/*.js\" --ignore-path .gitignore",
-    "prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/No-Country/s5-13-t-pern.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/No-Country/s5-13-t-pern/issues"
-  },
-  "homepage": "https://github.com/No-Country/s5-13-t-pern#readme",
-  "dependencies": {
-    "express": "^4.18.2"
+    "co": "sui-mono commit"
   },
   "devDependencies": {
-    "dotenv": "^16.0.3",
+    "@s-ui/mono": "^2.34.0",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
@@ -31,7 +21,9 @@
     "eslint-plugin-n": "^15.5.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.10",
-    "nodemon": "^2.0.20",
+    "husky": "^8.0.2",
+    "lerna": "^6.0.3",
+    "nodemon": "^2.0.6",
     "prettier": "^2.7.1"
   }
 }
