@@ -1,5 +1,6 @@
 {
   "name": "s5-13-t-pern",
+<<<<<<< HEAD
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -24,6 +25,22 @@
   },
   "devDependencies": {
     "dotenv": "^16.0.3",
+=======
+  "workspaces": [
+    "packages/backend",
+    "packages/frontend"
+  ],
+  "scripts": {
+    "start": "lerna run start --stream",
+    "build": "lerna run build --stream",
+    "test": "lerna run test --stream",
+    "prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
+    "lint": "eslint \"**/*.js\" --ignore-path .gitignore",
+    "co": "sui-mono commit"
+  },
+  "devDependencies": {
+    "@s-ui/mono": "^2.34.0",
+>>>>>>> ba27bb243130f5e13735989c51098605cc3a5a87
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
@@ -31,7 +48,13 @@
     "eslint-plugin-n": "^15.5.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.10",
+<<<<<<< HEAD
     "nodemon": "^2.0.20",
+=======
+    "husky": "^8.0.2",
+    "lerna": "^6.0.3",
+    "nodemon": "^2.0.6",
+>>>>>>> ba27bb243130f5e13735989c51098605cc3a5a87
     "prettier": "^2.7.1"
   }
 }

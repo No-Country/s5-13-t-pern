@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/No-Country/s5-13-t-pern.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/No-Country/s5-13-t-pern/issues"
+  },
+  "homepage": "https://github.com/No-Country/s5-13-t-pern#readme",
+  "dependencies": {
+    "puppeteer": "^19.2.2"
+  }
+}
