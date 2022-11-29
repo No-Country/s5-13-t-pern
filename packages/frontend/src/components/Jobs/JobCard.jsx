@@ -13,8 +13,9 @@ const JobCard = (jobs) => {
             sx={{
                 width: '360px',
                 height: '144px',
-                marginTop: '450px',
-                marginLeft: '156px',
+                marginTop: '20px',
+                marginLeft: '20px',
+                marginRight: '20px',
                 borderRadius: '10px',
                 bgcolor: '#E0E0E0',
             }}

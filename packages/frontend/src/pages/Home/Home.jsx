@@ -3,9 +3,10 @@ import './Home.modules.css'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
-import SearchBox from '../../components/SearchBox'
+import SearchBox from '../../context/SearchBox'
 import { Stack } from '@mui/system'
 import { Button, Typography } from '@mui/material'
+import { Link } from 'react-router-dom'
 import Box1 from '../../components/Boxes/Box1'
 import Box2 from '../../components/Boxes/Box2'
 import Box3 from '../../components/Boxes/Box3'
@@ -63,22 +64,25 @@ export default function Home() {
                             <SearchBox className="box3" />
                         </Box>
                         <div className="label2"></div>
-                        <Button
-                            variant="contained"
-                            sx={{
-                                fontFamily: 'Montserrat',
-                                color: 'black',
-                                width: '360px',
-                                height: '48px',
-                                borderRadius: '12px',
-                                fontSize: '30px',
-                                fontWeight: '700',
-                                lineHeight: '36px',
-                                backgroundColor: 'rgba(224, 224, 224, 1)',
-                            }}
-                        >
-                            Buscar
-                        </Button>
+                        <Link to="/jobs">
+                            <Button
+                                className="boton"
+                                variant="contained"
+                                sx={{
+                                    fontFamily: 'Montserrat',
+                                    color: 'black',
+                                    width: '360px',
+                                    height: '48px',
+                                    borderRadius: '12px',
+                                    fontSize: '30px',
+                                    fontWeight: '700',
+                                    lineHeight: '36px',
+                                    backgroundColor: 'rgba(224, 224, 224, 1)',
+                                }}
+                            >
+                                Buscar
+                            </Button>
+                        </Link>
                     </Stack>
                 </Container>
                 <Container

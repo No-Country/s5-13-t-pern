@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Footer from '../components/Footer/Footer'
 import Home from '../pages/Home/Home'
 import Header from '../components/Header/Header'
-import Jobs from '../pages/Jobs'
+import Jobs from '../pages/Jobs/Jobs'
 import JobCardPage from '../pages/JobCardPage'
 import JobDetailCardPage from '../pages/JobDetailCardPage'
 
@@ -13,9 +13,9 @@ const Routers = () => (
         <Header />
         <Routes>
             <Route element={<Home />} path="/" />
-            <Route element={<Jobs />} path="jobs" />
-            <Route element={<JobCardPage />} path="jobcardpage" />
-            <Route element={<JobDetailCardPage />} path="jobdetailpage" />
+            <Route element={<Jobs />} path="/jobs" />
+            <Route element={<JobCardPage />} path="/jobcardpage" />
+            <Route element={<JobDetailCardPage />} path="/jobdetailpage" />
         </Routes>
         <Footer />
     </BrowserRouter>

@@ -27,7 +27,7 @@ function Footer() {
             sx={{
                 width: '100%',
                 height: { xs: '170px', md: '260px' },
-                backgroundColor: 'rgba(194,194,194,1)',
+                backgroundColor: '#E4E4E4',
             }}
         >
             <Container disableGutters maxWidth={false}>

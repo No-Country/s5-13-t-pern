@@ -36,10 +36,7 @@ function Header() {
     }
 
     return (
-        <AppBar
-            position="static"
-            sx={{ backgroundColor: 'rgba(194, 194,194,1)' }}
-        >
+        <AppBar position="static" sx={{ backgroundColor: '#E4E4E4' }}>
             <Container disableGutters maxWidth={false}>
                 <Toolbar disableGutters>
                     <AdbIcon
