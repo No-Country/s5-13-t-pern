@@ -69,6 +69,10 @@ export default function Home() {
                                 className="boton"
                                 variant="contained"
                                 sx={{
+                                    ':hover': {
+                                        bgcolor: 'rgba(194, 194, 194, 1)', // theme.palette.primary.main
+                                        color: 'white',
+                                    },
                                     fontFamily: 'Montserrat',
                                     color: 'black',
                                     width: '360px',

@@ -6,7 +6,6 @@
 
 #root {
     margin: 0 auto;
-    text-align: center;
     flex-grow: 1;
     min-height: 100vh;
     min-width: 320px;
@@ -23,6 +22,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+}
+
+.MuiCardContent-root {
+    display: block;
 }
 
 a {
