@@ -16,7 +16,7 @@ const busqueda = async (search, location = '') => {
         const page = await browser.newPage()
         await page.goto(url)
         // Buscar en la pagina principal la lista de los trabajos
-        const productHandles = await page.$$('div.sc-joxovf.gMiHSv.sc-fYAFcb.fmCjWW');
+        const productHandles = await page.$$(`[id="listado-avisos"] > div`);
 
         let items = [];
         let listLinks = [];
@@ -29,76 +29,82 @@ const busqueda = async (search, location = '') => {
             let links = 'Null'
             let description = 'Null'
 
+            // pass the single handle below
+
             try {
-                // pass the single handle below
-                title = await page.evaluate(el => el.querySelector("div.sc-ccvjgv.buwrje > h2").textContent, productHandle);
+                title = await page.evaluate(el => el.querySelector("h2").textContent, productHandle);
             } catch (error) { }
 
             try {
-                company = await page.evaluate(el => el.querySelector("div.sc-fEVUGC.rZTai > h3").textContent, productHandle);
+                company = await page.evaluate(el => el.querySelector("h3").textContent, productHandle);
             } catch (error) { }
 
             try {
-                site = await page.evaluate(el => el.querySelector("div.sc-ccvjgv.buwrje > div:nth-child(1) > h3").textContent, productHandle);
+                site = await page.evaluate(el => el.querySelector("a > div > div:nth-child(2) > div > div:nth-child(1) > h3").textContent, productHandle);
             } catch (error) { }
 
             try {
-                type = await page.evaluate(el => el.querySelector("div.sc-ccvjgv.buwrje > div:nth-child(2) > h3").textContent, productHandle);
+                type = await page.evaluate(el => el.querySelector("a > div > div:nth-child(2) > div > div:nth-child(2) > h3").textContent, productHandle);
             } catch (error) { }
 
             try {
-                const link = await page.evaluate(el => el.querySelector("a.sc-kAKrxA.cjWzfT").getAttribute('href'), productHandle);
+                const link = await page.evaluate(el => el.querySelector("a").getAttribute('href'), productHandle);
                 links = 'https://www.bumeran.com.ve' + link
             } catch (error) { }
 
             //entrar a los links y extraer la descripcion
+
+            const browserDesc = await puppeteer.launch({
+                headless: true,
+                defaultViewport: false,
+                //dumpio: true
+            })
+            const pageDesc = await browserDesc.newPage()
+
             try {
-                const browserDesc = await puppeteer.launch({
-                    headless: true,
-                    defaultViewport: false,
-                    //dumpio: true
-                })
-                const pageDesc = await browserDesc.newPage()
-                pageDesc.goto(links)
-                const resultsSelector = 'div.sc-qurOa.ABedS';
-                await pageDesc.waitForSelector(resultsSelector);
-                // Extract the results from the pageDesc.
-                description = await pageDesc.evaluate(resultsSelector => {
-                    return [...document.querySelectorAll(resultsSelector)].map(anchor => {
-                        const title = anchor.textContent.split('|')[0].trim();
-                        return `${title}`;
-                    });
-                }, resultsSelector);
+                if (links == 'Null') {
+                    description = 'Null'
+                } else {
+                    pageDesc.goto(links)
+                    const resultsSelector = `[id="section-detalle"] > div:nth-child(2)`;
+                    await pageDesc.waitForSelector(resultsSelector);
+                    // Extract the results from the pageDesc.
+                    description = await pageDesc.evaluate(resultsSelector => {
+                        return [...document.querySelectorAll(resultsSelector)].map(anchor => {
+                            const title = anchor.textContent.split('|')[0].trim();
+                            return `${title}`;
+                        });
+                    }, resultsSelector);
+                }
+            } catch (error) { }
 
-            } catch (error) { console.log('error') }
-
-            items.push({ title, company, site, type, links, description })
-            listLinks.push(links)
-            console.log(items)
+            if (title == 'Null') {
+                continue
+            } else {
+                items.push({ title, company, site, type, links, description })
+                listLinks.push(links)
+            }
         }
 
-        //console.log(items)
         browser.close();
         // Validar si la carpeta data existe, si no la crea.
         const dir = fs.existsSync('./data')
-        if (!dir) {
-            fs.mkdirSync('./data');
-            // Escribir la informacion en archivos .json dentro de la carpeta data.
-            try {
-                fs.appendFileSync(`./data/links_${search.replace(' ', '_')}_${crypto.randomUUID()}_${new Date().getTime()}.json`, JSON.stringify(listLinks));
-            } catch (error) {
-                console.log(error.message)
-            }
+        if (!dir) fs.mkdirSync('./data');
 
-            try {
-                fs.appendFileSync(`./data/ofertas_${search.replace(' ', '_')}_${crypto.randomUUID()}_${new Date().getTime()}.json`, JSON.stringify(items));
+        // Escribir la informacion en archivos .json dentro de la carpeta data.
+        try {
+            fs.appendFileSync(`./data/links_${search.replace(' ', '_')}_${crypto.randomUUID()}_${new Date().getTime()}.json`, JSON.stringify(listLinks));
+        } catch (error) {
+            console.log(error.message)
+        }
 
-            } catch (error) {
-                console.log(error.message)
-            }
+        try {
+            fs.appendFileSync(`./data/ofertas_${search.replace(' ', '_')}_${crypto.randomUUID()}_${new Date().getTime()}.json`, JSON.stringify(items));
+            console.log('saved')
+        } catch (error) {
+            console.log(error.message)
         }
         stop++;
-        console.log(stop)
     }
     console.log('finish')
     process.exit(13)//fix this

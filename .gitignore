@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-node_modules
-.env
-=======
 # Created by https://www.toptal.com/developers/gitignore/api/node,macos,windows,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,macos,windows,linux
 
@@ -220,4 +216,3 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/node,macos,windows,linux
->>>>>>> ba27bb243130f5e13735989c51098605cc3a5a87
