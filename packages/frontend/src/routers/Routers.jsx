@@ -5,8 +5,9 @@ import Footer from '../components/Footer/Footer'
 import Home from '../pages/Home/Home'
 import Header from '../components/Header/Header'
 import Jobs from '../pages/Jobs/Jobs'
-import JobCardPage from '../pages/JobCardPage'
 import JobDetailCardPage from '../pages/JobDetailCardPage'
+import Login from '../pages/Login'
+import Register from '../pages/Register'
 
 const Routers = () => (
     <BrowserRouter>
@@ -14,8 +15,9 @@ const Routers = () => (
         <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<Jobs />} path="/jobs" />
-            <Route element={<JobCardPage />} path="/jobcardpage" />
             <Route element={<JobDetailCardPage />} path="/jobdetailcardpage" />
+            <Route element={<Login />} path="/login" />
+            <Route element={<Register />} path="/register" />
         </Routes>
         <Footer />
     </BrowserRouter>
