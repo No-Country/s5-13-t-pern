@@ -127,7 +127,7 @@ const Form = ({ onSubmit }) => {
                             variant="contained"
                             sx={{
                                 ':hover': {
-                                    bgcolor: 'rgba(194, 194, 194, 1)', // theme.palette.primary.main
+                                    bgcolor: 'rgba(194, 194, 194, 1)',
                                     color: 'white',
                                 },
                                 background: '#666666',
@@ -142,7 +142,7 @@ const Form = ({ onSubmit }) => {
                                 fullWidth
                                 sx={{
                                     ':hover': {
-                                        bgcolor: 'rgba(194, 194, 194, 1)', // theme.palette.primary.main
+                                        bgcolor: 'rgba(194, 194, 194, 1)',
                                         color: 'white',
                                     },
                                     background: '#C2C2C2',
