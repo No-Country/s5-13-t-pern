@@ -3,7 +3,7 @@ import React from 'react'
 import JobsContainer from '../../components/Jobs/JobsContainer'
 import { Stack } from '@mui/system'
 import './Jobs.modules.css'
-import { Box } from '@mui/material'
+import { Box, Link } from '@mui/material'
 import SearchBox from '../../context/SearchBox'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
@@ -92,7 +92,9 @@ const Jobs = (jobs) => {
             </Stack>
 
             <Stack className="containerjobs">
-                <JobsContainer jobs={jobs} />
+                <Link to="/">
+                    <JobsContainer jobs={jobs} />
+                </Link>
             </Stack>
         </Container>
     )

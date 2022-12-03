@@ -65,6 +65,10 @@ function Header() {
 
                             color: 'rgba(0,0,0,1)',
                             textDecoration: 'none',
+                            ':hover': {
+                                bgcolor: 'rgba(194, 194, 194, 1)', // theme.palette.primary.main
+                                color: 'white',
+                            },
                         }}
                     >
                         Scrapjob

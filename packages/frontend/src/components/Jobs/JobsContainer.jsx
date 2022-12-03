@@ -2,6 +2,7 @@ import * as React from 'react'
 import Grid from '@mui/material/Grid'
 import JobCard from './JobCard'
 import jobs from '../../constants/jobs'
+import { Link } from 'react-router-dom'
 
 const JobsContainer = () => (
     <div>
@@ -13,7 +14,9 @@ const JobsContainer = () => (
                 key={job.id}
             >
                 <Grid item xs={4}>
-                    <JobCard jobs={job} />
+                    <Link to="/jobcardpage">
+                        <JobCard jobs={job} />
+                    </Link>
                 </Grid>
                 <Grid item xs={4}>
                     <JobCard jobs={job} />

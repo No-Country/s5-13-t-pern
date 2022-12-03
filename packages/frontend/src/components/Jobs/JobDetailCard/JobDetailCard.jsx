@@ -1,29 +1,55 @@
 import * as React from 'react'
 import './JobDetailCard.modules.css'
-
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 import Typography from '@mui/material/Typography'
-import { Button } from '@mui/material'
+import { Button, Box } from '@mui/material'
 import Stack from '@mui/material/Stack'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import PlaceIcon from '@mui/icons-material/Place'
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline'
+import CardMedia from '@mui/material/CardMedia'
 
 export default function JobDetailCard() {
     return (
         <Card
             sx={{
                 maxWidth: 900,
-                margin: '50px',
+                margin: '100px',
                 border: 'none',
                 boxShadow: 'none',
             }}
         >
-            <CardHeader title="Electricista" subheader="Detalles del Trabajo" />
-
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                }}
+            >
+                <CardHeader
+                    title="Electricista"
+                    subheader="Detalles del Trabajo"
+                />
+                <CardMedia
+                    sx={{
+                        display: {
+                            xs: 'flex',
+                            md: 'flex',
+                            lg: 'flex',
+                            xl: 'none',
+                        },
+                        marginTop: '16px',
+                    }}
+                    component="img"
+                    height="72"
+                    width="20"
+                    image=""
+                    alt="LOGO"
+                />
+            </Box>
             <CardContent>
                 <Stack direction={{ md: 'row', xs: 'column' }} flexWrap="wrap">
                     <Stack direction="row" flexWrap="wrap">
@@ -143,7 +169,7 @@ export default function JobDetailCard() {
                         width: '900px',
                         height: '46px',
                         borderRadius: '10px',
-                        fontSize: '30px',
+                        fontSize: '25px',
                         fontWeight: '700',
                         lineHeight: '36px',
                         backgroundColor: 'rgba(224, 224, 224, 1)',

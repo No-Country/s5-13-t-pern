@@ -28,8 +28,7 @@ export default function Home() {
                             fontWeight: '700',
                             fontSize: '75px',
                             lineHeight: '88px',
-                            display: 'flex',
-
+                            textAlign: 'center',
                             color: '#FFFFFF',
                             marginTop: '100px',
                         }}
