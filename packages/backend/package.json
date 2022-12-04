@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/No-Country/s5-13-t-pern#readme",
   "dependencies": {
+    "cron": "^2.1.0",
     "puppeteer": "^19.2.2"
   }
 }
