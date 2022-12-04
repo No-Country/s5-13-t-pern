@@ -8,6 +8,7 @@ import Jobs from '../pages/Jobs/Jobs'
 import JobDetailCardPage from '../pages/JobDetailCardPage'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
+import Finder from '../pages/Finder'
 
 const Routers = () => (
     <BrowserRouter>
@@ -18,6 +19,7 @@ const Routers = () => (
             <Route element={<JobDetailCardPage />} path="/jobdetailcardpage" />
             <Route element={<Login />} path="/login" />
             <Route element={<Register />} path="/register" />
+            <Route element={<Finder />} path="/finder" />{' '}
         </Routes>
         <Footer />
     </BrowserRouter>

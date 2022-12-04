@@ -3,17 +3,17 @@ import './Home.modules.css'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
-import SearchBox from '../../context/SearchBox'
 import { Stack } from '@mui/system'
 import { Button, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 import Box1 from '../../components/Boxes/Box1'
 import Box2 from '../../components/Boxes/Box2'
 import Box3 from '../../components/Boxes/Box3'
+import SearchBox from '../../context/SearchBox'
 
 export default function Home() {
     return (
-        <React.Fragment>
+        <Container disableGutters maxWidth={false}>
             <Grid
                 container
                 direction="column"
@@ -22,11 +22,25 @@ export default function Home() {
             >
                 <Container id="searchbox" disableGutters maxWidth={false}>
                     <Typography
+                        display={{
+                            xs: 'none',
+                            sm: 'none',
+                            md: 'none',
+                            lg: 'flex',
+                            xl: 'flex',
+                        }}
+                        fontSize={{
+                            xl: '75px',
+                            lg: '40px',
+                        }}
+                        justifyContent={{
+                            xl: 'center',
+                            lg: 'center',
+                        }}
                         sx={{
                             fontFamily: 'Montserrat',
                             fontStyle: 'normal',
                             fontWeight: '700',
-                            fontSize: '75px',
                             lineHeight: '88px',
                             textAlign: 'center',
                             color: '#FFFFFF',
@@ -35,12 +49,64 @@ export default function Home() {
                     >
                         ¡Una nueva oportunidad más cerca de lo que crees!
                     </Typography>
+                    <Typography
+                        mt={4}
+                        ml={4}
+                        display={{
+                            xs: 'flex',
+                            md: 'flex',
+                            lg: 'none',
+                            xl: 'none',
+                        }}
+                        sx={{
+                            fontFamily: 'Montserrat',
+                            fontStyle: 'normal',
+                            fontWeight: '700',
+                            fontSize: '35px',
+                            lineHeight: '32px',
+                            textAlign: 'center',
+                            color: '#FFFFFF',
+                        }}
+                    >
+                        Buscador
+                    </Typography>
+                    <Typography
+                        mt={1}
+                        ml={4}
+                        display={{
+                            xs: 'flex',
+                            md: 'flex',
+                            lg: 'none',
+                            xl: 'none',
+                        }}
+                        sx={{
+                            fontFamily: 'Montserrat',
+                            fontStyle: 'normal',
+                            fontWeight: '400',
+                            fontSize: '20px',
+                            lineHeight: '24px',
+                            textAlign: 'center',
+                            color: '#FFFFFF',
+                        }}
+                    >
+                        Filtra tu futuro trabajo
+                    </Typography>
                     <Stack
-                        className="searchbox2"
-                        direction="row"
-                        justifyContent="space-evenly"
-                        alignItems="center"
-                        spacing={12}
+                        marginTop="80px"
+                        spacing={3}
+                        justifyContent="center"
+                        direction={{
+                            xs: 'column',
+                            md: 'column',
+                            lg: 'column',
+                            xl: 'row',
+                        }}
+                        alignItems={{
+                            xs: 'center',
+                            md: 'center',
+                            lg: 'center',
+                            xl: 'end',
+                        }}
                     >
                         <Box>
                             <Typography className="label">Cargo</Typography>
@@ -62,10 +128,10 @@ export default function Home() {
                             <Typography className="label">Distancia</Typography>
                             <SearchBox className="box3" />
                         </Box>
-                        <div className="label2"></div>
+
                         <Link to="/jobs">
                             <Button
-                                className="boton"
+                                className="box3"
                                 variant="contained"
                                 sx={{
                                     ':hover': {
@@ -89,12 +155,34 @@ export default function Home() {
                     </Stack>
                 </Container>
                 <Container
+                    height={{
+                        xl: 'flex',
+                        lg: 'flex',
+                        md: 'flex',
+                        sm: 'none',
+                        xs: 'none',
+                    }}
                     className="bloque2-home"
                     disableGutters
                     maxWidth={false}
                 >
-                    <Stack>
+                    <Stack
+                        display={{
+                            xl: 'flex',
+                            lg: 'flex',
+                            md: 'flex',
+                            sm: 'none',
+                            xs: 'none',
+                        }}
+                    >
                         <Typography
+                            display={{
+                                xl: 'flex',
+                                lg: 'flex',
+                                md: 'flex',
+                                sm: 'none',
+                                xs: 'none',
+                            }}
                             sx={{
                                 fontFamily: 'Montserrat',
                                 fontWeight: '700',
@@ -112,11 +200,18 @@ export default function Home() {
                     </Stack>
 
                     <Stack
+                        display={{
+                            xl: 'flex',
+                            lg: 'flex',
+                            md: 'flex',
+                            sm: 'none',
+                            xs: 'none',
+                        }}
                         paddingTop="50px"
                         paddingBottom="50px"
                         justifyContent="space-evenly"
                         alignItems="center"
-                        direction={{ xs: 'column', sm: 'row' }}
+                        direction={{ xs: 'column', sm: 'column', md: 'row' }}
                         spacing={2}
                     >
                         <Box1 />
@@ -125,6 +220,6 @@ export default function Home() {
                     </Stack>
                 </Container>
             </Grid>
-        </React.Fragment>
+        </Container>
     )
 }

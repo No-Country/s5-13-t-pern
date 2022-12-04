@@ -9,10 +9,16 @@ const SearchBox1 = () => {
     return (
         <Container>
             <Stack
-                direction="row"
-                justifyContent="space-evenly"
-                alignItems="center"
-                spacing={12}
+                sx={{
+                    display: {
+                        xl: 'row',
+                        lg: 'row',
+                        md: 'row',
+                    },
+                    justifyContent: 'space-evenly',
+                    alignItems: 'center',
+                    spacing: '12',
+                }}
             >
                 <Box>
                     <Typography className="label">Cargo</Typography>
