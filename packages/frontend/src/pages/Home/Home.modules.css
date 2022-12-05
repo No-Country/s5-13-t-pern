@@ -1,0 +1,79 @@
+#searchbox {
+    background-image: url('../../assets/heroimage.png');
+
+    background-size: cover;
+    height: 624px;
+
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.label {
+    display: flex;
+    justify-items: flex-start;
+    font-family: 'Montserrat';
+    font-size: 21px;
+    line-height: 24px;
+    color: rgba(240, 240, 240, 1);
+    font-weight: 700;
+}
+
+.css-1p6pfav-MuiInputBase-root-MuiOutlinedInput-root {
+    border: 4px rgba(194, 194, 194, 1);
+    border-radius: 12px;
+    background-color: aliceblue;
+    width: 1360px;
+    height: 48px;
+}
+/* .label2 {
+    height: 24px;
+    padding-top: 50px;
+} */
+
+.title-home {
+    margin: 0 auto;
+    position: absolute;
+    width: 1038px;
+    height: 176px;
+    left: 400px;
+    top: 248px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 88px;
+    /* or 117% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #ffffff;
+}
+
+.bloque2-home {
+    background-color: white;
+}
+
+.title2-home {
+    position: absolute;
+    width: 616px;
+    height: 48px;
+    left: 306px;
+    top: 808px;
+
+    /* Montserrat/Light/Bold 36px-48 */
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    /* identical to box height, or 133% */
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}

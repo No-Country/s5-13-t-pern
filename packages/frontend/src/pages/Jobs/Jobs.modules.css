@@ -1,0 +1,17 @@
+.label1 {
+    color: #1a1a1a;
+    display: flex;
+    justify-items: flex-start;
+    font-family: 'Montserrat';
+    font-size: 21px;
+    line-height: 24px;
+}
+
+.busca {
+    padding-top: 20px;
+}
+
+.buscador {
+    width: 691px;
+    height: 56px;
+}
