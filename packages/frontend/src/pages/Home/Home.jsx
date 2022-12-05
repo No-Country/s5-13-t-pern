@@ -108,9 +108,10 @@ export default function Home() {
                             xl: 'end',
                         }}
                     >
-                        <Box>
+                        <Box fullWidth>
                             <Typography className="label">Cargo</Typography>
                             <SearchBox
+                                fullWidth
                                 sx={{
                                     fontFamily: 'Montserrat',
                                     color: 'black',

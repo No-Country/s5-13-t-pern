@@ -6,16 +6,18 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder'
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import PlaceIcon from '@mui/icons-material/Place'
+import './JobCard.modules.css'
 
 const JobCard = (jobs) => {
     return (
         <Card
             sx={{
+                margin: '0px',
                 width: '360px',
                 height: '144px',
-                marginTop: '20px',
+                /* marginTop: '20px',
                 marginLeft: '20px',
-                marginRight: '20px',
+                marginRight: '20px', */
                 borderRadius: '10px',
                 bgcolor: '#E0E0E0',
             }}

@@ -4,9 +4,7 @@ import JobsContainer from '../../components/Jobs/JobsContainer'
 import { Stack } from '@mui/system'
 import './Jobs.modules.css'
 import { Box, Link } from '@mui/material'
-import SearchBox from '../../context/SearchBox'
 import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import SelectEspecialidad from '../../components/Select/SelectEspecialidad'
 import SelectExperiencia from '../../components/Select/SelectExperiencia'
@@ -15,83 +13,71 @@ import SelectSalario from '../../components/Select/SelectSalario'
 const Jobs = (jobs) => {
     return (
         <Container disableGutters maxWidth={false}>
-            <Stack
-                className="searchbox3"
-                direction="row"
-                alignItems="center"
-                spacing={12}
-                backgroundColor="#E4E4E4"
-                height="140px"
+            <Typography
+                mt={3}
+                ml={2}
+                display={{
+                    xs: 'flex',
+                    sm: 'flex',
+                    md: 'flex',
+                    lg: 'none',
+                    xl: 'none',
+                }}
+                sx={{
+                    fontFamily: 'Montserrat',
+                    fontStyle: 'normal',
+                    weight: '700',
+                    fontSize: '32px',
+                    linHeight: '32px',
+                }}
             >
-                <Stack
-                    direction="row"
-                    paddingLeft="180px"
-                    justifyContent="space-evenly"
-                    alignItems="center"
-                    spacing={12}
-                >
-                    <Box>
-                        <Typography className="label1">Cargo</Typography>
-                        <SearchBox
-                            sx={{
-                                fontFamily: 'Montserrat',
-                                color: 'black',
-                                fontSize: '30px',
-                                fontWeight: '700',
-                                lineHeight: '36px',
-                            }}
-                        />
-                    </Box>
-                    <Box>
-                        <Typography className="label1">Lugar</Typography>
-                        <SearchBox className="box2" />
-                    </Box>
-                    <Box>
-                        <Typography className="label1">Distancia</Typography>
-                        <SearchBox className="box3" />
-                    </Box>
-                    <div className="label2"></div>
-                    <Button
-                        sx={{
-                            color: 'black',
-                            width: '360px',
-                            height: '48px',
-                            borderRadius: '12px',
-
-                            fontWeight: '700',
-                            lineHeight: '36px',
-                            backgroundColor: 'rgba(224, 224, 224, 1)',
-                        }}
-                    >
-                        Buscar
-                    </Button>
-                </Stack>
-            </Stack>
-            <Box className="buscador">
+                Resultados
+            </Typography>
+            <Box
+                mt={2}
+                ml={2}
+                className="buscador"
+                display="flex"
+                justifyContent={{ xs: 'start', sm: 'start', md: 'center' }}
+            >
                 <Typography
                     sx={{
                         fontFamily: 'Montserrat',
                         fontStyle: 'normal',
                         weight: '400',
-                        fontSize: '43px',
                         linHeight: '56px',
+                    }}
+                    fontSize={{
+                        xs: '25px',
+                        sm: '25px',
+                        md: '38px',
+                        lg: '43px',
+                        xl: '43px',
                     }}
                 >
                     Se han encontrado 1001 trabajos
                 </Typography>
             </Box>
             <Stack
+                display={{
+                    xs: 'none',
+                    sm: 'none',
+                    md: 'none',
+                    lg: 'flex',
+                    xl: 'flex',
+                }}
                 direction="row"
                 justifyContent="space-evenly"
                 alignItems="center"
-                margin-top="150px"
+                /* margin-top="150px" */
+                mt={4}
             >
                 <SelectEspecialidad />
                 <SelectExperiencia />
                 <SelectSalario />
             </Stack>
 
-            <Stack className="containerjobs">
+            <Stack justifyContent="center">
                 <Link to="/">
                     <JobsContainer jobs={jobs} />
                 </Link>
