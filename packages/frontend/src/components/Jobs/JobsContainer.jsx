@@ -31,7 +31,7 @@ const JobsContainer = () => (
                 key={job.id}
             >
                 <Grid item xs={1}>
-                    <Link to="/jobcardpage">
+                    <Link to="/jobdetailcardpage">
                         <JobCard jobs={job} />
                     </Link>
                 </Grid>
