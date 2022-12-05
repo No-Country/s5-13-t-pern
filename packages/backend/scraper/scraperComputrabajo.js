@@ -1,6 +1,7 @@
 const crypto  = require("crypto");
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+const { saveJobs } = require('../controllers/job.controller')
 
 function waitFor(miliseconds) {
     return new Promise((resolve) => setTimeout(resolve, miliseconds));
@@ -100,23 +101,27 @@ const busqueda = async (search, location = '') => {
 
     }
 
-    // Validar si la carpeta data existe, si no la crea.
-    const dir = fs.existsSync('./data')
-    if (!dir) fs.mkdirSync('./data');
+    //Guardar Trabajos a la base de datos
+    await saveJobs(listLinks, info)
 
 
-    // Escribir la informacion en archivos .json dentro de la carpeta data.
-    try {
-        fs.appendFileSync(`./data/links_${search.replace(' ', '_')}_${crypto.randomUUID()}_${new Date().getTime()}.json`, JSON.stringify(listLinks));
-    } catch (error) {
-        console.log(error.message)
-    }
+    // // Validar si la carpeta data existe, si no la crea.
+    // const dir = fs.existsSync('./data')
+    // if (!dir) fs.mkdirSync('./data');
 
-    try {
-        fs.appendFileSync(`./data/ofertas_${search.replace(' ', '_')}_${crypto.randomUUID()}_${new Date().getTime()}.json`, JSON.stringify(info));
-    } catch (error) {
-        console.log(error.message)
-    }
+
+    // // Escribir la informacion en archivos .json dentro de la carpeta data.
+    // try {
+    //     fs.appendFileSync(`./data/links_${search.replace(' ', '_')}_${crypto.randomUUID()}_${new Date().getTime()}.json`, JSON.stringify(listLinks));
+    // } catch (error) {
+    //     console.log(error.message)
+    // }
+
+    // try {
+    //     fs.appendFileSync(`./data/ofertas_${search.replace(' ', '_')}_${crypto.randomUUID()}_${new Date().getTime()}.json`, JSON.stringify(info));
+    // } catch (error) {
+    //     console.log(error.message)
+    // }
 
     await browser.close()
 };
