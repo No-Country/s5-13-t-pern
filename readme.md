@@ -30,14 +30,17 @@ Desplegado en **Render**
 ## Equipo de desarrollo
 
 ### FullStack
-:strawberry: [Jorge Camargo](https://github.com/KuraiRantan)
-:strawberry: [Oscar Alexander Solorzano](https://github.com/OscarSolorzano)
+- :strawberry: [Jorge Camargo](https://github.com/KuraiRantan)
+- :strawberry: [Oscar Alexander Solorzano](https://github.com/OscarSolorzano)
 
 ### Frontend:
-:cherries: [Itati Romero](https://github.com/itati3911)
+- :cherries: [Itati Romero](https://github.com/itati3911)
 
 ### Backend
-:grapes: [Jhonny Calvo](https://github.com/Bluejhonny)
+- :grapes: [Jhonny Calvo](https://github.com/Bluejhonny)
 
 ### UX/UI
-:apple: [Santiago Basualdo Cortez]()
+- :apple: [Santiago Basualdo Cortez](https://www.behance.net/santiagouxui)
+
+<img src="https://user-images.githubusercontent.com/59629654/206560605-7247ada0-31e0-4bbc-bf86-80f340c49782.png" width="460" align="right" />
+
