@@ -6,49 +6,60 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder'
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import PlaceIcon from '@mui/icons-material/Place'
+import Tooltip from '@mui/material/Tooltip'
 import './JobCard.modules.css'
 
-const JobCard = (jobs) => {
+const JobCard = ({ jobs }) => {
+
     return (
         <Card
             sx={{
                 margin: '0px',
                 width: '360px',
-                height: '144px',
+                // height: '144px',
                 /* marginTop: '20px',
                 marginLeft: '20px',
                 marginRight: '20px', */
                 borderRadius: '10px',
                 bgcolor: '#E0E0E0',
+                paddingX: '12px',
+                paddingTop: '15px'
             }}
         >
             <CardContent sx={{ padding: '0px' }}>
+
+
                 <Stack
                     direction="row"
                     flexWrap="wrap"
                     justifyContent="space-between"
                 >
-                    <Typography
-                        sx={{
-                            position: 'absolute',
-                            fontSize: '17px',
-                            width: '100px',
-                            fontWeight: '700',
-                            lineHeight: '24px',
-                            color: '#0A0A0A',
-                            marginTop: '8px',
-                            marginLeft: '12px',
-                        }}
-                    >
-                        Electricista
-                    </Typography>
+                    <Tooltip title={jobs.name} arrow placement='top'>
+
+                        <Typography
+                            sx={{
+                                fontSize: '17px',
+                                fontWeight: '700',
+                                lineHeight: '24px',
+                                color: '#0A0A0A',
+                                display: 'block',
+                                overflow: 'hidden',
+                                whiteSpace: 'nowrap',
+                                textOverflow: 'ellipsis',
+                                width: '327px',
+                                marginBottom: '20px'
+                            }}
+                        >
+                            {jobs.name}
+                        </Typography>
+                    </Tooltip>
+
                     <BookmarkBorderIcon
                         sx={{
                             height: '27px',
+                            position: 'absolute',
                             width: '21px',
                             color: '#1C1B1F',
-                            position: 'absolute',
-                            marginTop: '8px',
                             marginLeft: '320px',
                         }}
                     />
@@ -56,58 +67,47 @@ const JobCard = (jobs) => {
                 <Stack
                     direction="row"
                     flexWrap="wrap"
-                    justifyContent="space-between"
+                    justifyContent="start"
                 >
                     <PlaceIcon
                         sx={{
                             height: '27px',
                             width: '21px',
                             color: '#1C1B1F',
-                            position: 'absolute',
-                            marginTop: '40px',
-                            marginLeft: '14px',
                         }}
                     />
                     <Typography
                         sx={{
-                            position: 'absolute',
                             fontSize: '17px',
-                            width: '147px',
                             fontWeight: '400px',
                             lineHeight: '24px',
                             color: '#0A0A0A',
-                            marginTop: '40px',
-                            marginLeft: '44px',
+                            marginLeft: '5px',
                         }}
                     >
-                        Palermo, CABA
+                        {jobs.location}
                     </Typography>
                 </Stack>
                 <Stack
                     direction="row"
                     flexWrap="wrap"
-                    justifyContent="space-between"
+                    justifyContent="start"
                 >
                     <WorkOutlineIcon
                         sx={{
                             height: '27px',
                             width: '21px',
                             color: '#1C1B1F',
-                            position: 'absolute',
-                            marginTop: '72px',
-                            marginLeft: '14px',
                         }}
                     />
                     <Typography
                         sx={{
-                            position: 'absolute',
                             fontSize: '17px',
                             width: '155px',
                             fontWeight: '400px',
                             lineHeight: '24px',
                             color: '#0A0A0A',
-                            marginTop: '72px',
-                            marginLeft: '44px',
+                            marginLeft: '5px',
                         }}
                     >
                         Jornada completa
@@ -116,48 +116,44 @@ const JobCard = (jobs) => {
                 <Stack
                     direction="row"
                     flexWrap="wrap"
-                    justifyContent="space-between"
+                    justifyContent="start"
                 >
                     <AccessTimeIcon
                         sx={{
                             height: '27px',
                             width: '21px',
                             color: '#1C1B1F',
-                            position: 'absolute',
-                            marginTop: '104px',
-                            marginLeft: '14px',
                         }}
                     />
                     <Typography
                         sx={{
-                            position: 'absolute',
                             fontSize: '17px',
                             width: '129px',
                             fontWeight: '400px',
                             lineHeight: '24px',
                             color: '#0A0A0A',
-                            marginTop: '104px',
-                            marginLeft: '44px',
+                            marginLeft: '5px',
                         }}
                     >
                         06:00 a 15:00hs
                     </Typography>
+                </Stack>
+                <Stack
+                    textAlign="right"
+                >
                     <Typography
                         sx={{
-                            position: 'absolute',
                             fontSize: '12px',
-                            width: '129px',
                             fontWeight: '400px',
                             lineHeight: '16px',
                             color: '#858585',
-                            marginTop: '110px',
-                            marginLeft: '260px',
                         }}
                     >
                         21/11/2022
                     </Typography>
                 </Stack>
             </CardContent>
+
         </Card>
     )
 }

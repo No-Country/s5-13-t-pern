@@ -10,7 +10,7 @@ import SelectEspecialidad from '../../components/Select/SelectEspecialidad'
 import SelectExperiencia from '../../components/Select/SelectExperiencia'
 import SelectSalario from '../../components/Select/SelectSalario'
 
-const Jobs = (jobs) => {
+const Jobs = () => {
     return (
         <Container disableGutters maxWidth={false}>
             <Typography
@@ -78,8 +78,8 @@ const Jobs = (jobs) => {
             </Stack>
 
             <Stack justifyContent="center">
-                <Link to="/">
-                    <JobsContainer jobs={jobs} />
+                <Link to="/" style={{ color: 'black', textDecoration: 'inherit'}}>
+                    <JobsContainer/>
                 </Link>
             </Stack>
         </Container>
