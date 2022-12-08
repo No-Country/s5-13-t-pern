@@ -7,6 +7,7 @@ ScrapJob es un Scraper que utiliza principalmente la libreria Puppeteer para aut
 
 ![image](https://user-images.githubusercontent.com/59629654/206558192-19822e56-6d50-416a-a221-46f813e6082a.png)
 <img src="https://user-images.githubusercontent.com/59629654/206560605-7247ada0-31e0-4bbc-bf86-80f340c49782.png" width="720" align="right" />
+<img src="https://user-images.githubusercontent.com/59629654/206575872-e8188c12-b764-4390-b5c9-29b80f30e9b2.png" width="720" align="right" />
 
 ## Tecnologías utilizadas
 
