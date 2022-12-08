@@ -6,6 +6,7 @@ ScrapJob es un portal de empleo donde podras encontras trabajos publicados en di
 ScrapJob es un Scraper que utiliza principalmente la libreria Puppeteer para automatizar las busquedas de empleos y asi las puedas encontrar en un solo lugar.
 
 ![image](https://user-images.githubusercontent.com/59629654/206558192-19822e56-6d50-416a-a221-46f813e6082a.png)
+<img src="https://user-images.githubusercontent.com/59629654/206560605-7247ada0-31e0-4bbc-bf86-80f340c49782.png" width="720" align="right" />
 
 ## Tecnologías utilizadas
 
@@ -42,5 +43,5 @@ Desplegado en **Render**
 ### UX/UI
 - :apple: [Santiago Basualdo Cortez](https://www.behance.net/santiagouxui)
 
-<img src="https://user-images.githubusercontent.com/59629654/206560605-7247ada0-31e0-4bbc-bf86-80f340c49782.png" width="460" align="right" />
+
 
