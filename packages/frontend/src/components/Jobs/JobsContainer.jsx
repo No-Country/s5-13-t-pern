@@ -1,13 +1,31 @@
 import * as React from 'react'
 import Grid from '@mui/material/Grid'
 import JobCard from './JobCard'
-import jobs from '../../constants/jobs'
 import { Link } from 'react-router-dom'
 import { Container } from '@mui/system'
+import { useReducer } from 'react'
+import { useEffect } from 'react'
+import { jobsTypes } from '../../context/actions/jobsActions'
+import { jobsInitialState, jobsReducer } from '../../context/reducers/jobsReducer'
+import Spinner from '../Spinner'
 
-const JobsContainer = () => (
-    <Container>
-        {jobs.map((job) => (
+const JobsContainer = () => {
+    const [state, dispatch] = useReducer(jobsReducer, jobsInitialState);
+
+    useEffect(() => {
+        dispatch({ type: jobsTypes.LOADING })
+        fetch(import.meta.env.VITE_ENDPOINT_URL + '/data')
+            .then(async (res) => {
+                if (res.status !== 200) return;
+                const data = await res.json();
+                dispatch({ type: jobsTypes.GET_ALL_JOBS, payload: data.jobs })
+            })
+    }, []);
+
+    if(state.isLoading) return (<Spinner></Spinner>)
+
+    return (
+        <Container>
             <Grid
                 container
                 sx={{
@@ -25,25 +43,26 @@ const JobsContainer = () => (
                     lg: 'row',
                     xl: 'row',
                 }}
-                /* rowSpacing={2}
-                columnSpacing={3}
-                justifyContent="center" */
-                key={job.id}
+            /* rowSpacing={2}
+            columnSpacing={3}
+            justifyContent="center" */
+            // key={job.id}
             >
-                <Grid item xs={1}>
-                    <Link to="/jobcardpage">
-                        <JobCard jobs={job} />
-                    </Link>
-                </Grid>
-                <Grid item xs={1}>
-                    <JobCard jobs={job} />
-                </Grid>
-                <Grid item xs={1}>
-                    <JobCard jobs={job} />
-                </Grid>
+                {state.jobs?.map((job) => (
+                    <Grid item xs={1}>
+                        <Link to={`/jobs/${job.id}`} style={{ color: 'transparent', textDecoration: 'inherit'}}>
+                            <JobCard jobs={job} />
+                        </Link>
+                    </Grid>
+                    // {/* <Grid item xs={1}>
+                    //     <JobCard jobs={job} />
+                    // </Grid>
+                    // <Grid item xs={1}>
+                    //     <JobCard jobs={job} />
+                    // </Grid> */}
+                ))}
             </Grid>
-        ))}
-    </Container>
-)
-
+        </Container>
+    )
+}
 export default JobsContainer

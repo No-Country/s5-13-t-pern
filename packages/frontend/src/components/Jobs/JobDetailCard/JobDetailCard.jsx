@@ -12,7 +12,7 @@ import PlaceIcon from '@mui/icons-material/Place'
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline'
 import CardMedia from '@mui/material/CardMedia'
 
-export default function JobDetailCard() {
+export default function JobDetailCard({ job }) {
     return (
         <Card
             sx={{
@@ -29,10 +29,14 @@ export default function JobDetailCard() {
                     justifyContent: 'space-between',
                 }}
             >
-                <CardHeader
-                    title="Electricista"
-                    subheader="Detalles del Trabajo"
-                />
+                <Stack>
+                    <Typography variant='h5'>
+                        {job.name}
+                    </Typography>
+                    <Typography variant='body1'>
+                        Detalles del Trabajo
+                    </Typography>
+                </Stack>
                 <CardMedia
                     sx={{
                         display: {
@@ -71,7 +75,7 @@ export default function JobDetailCard() {
                                 marginLeft: '14px',
                             }}
                         >
-                            Palermo, CABA
+                            {job.location}
                         </Typography>
                     </Stack>
                     <Stack direction="row" flexWrap="wrap">
@@ -122,26 +126,15 @@ export default function JobDetailCard() {
             </CardContent>
 
             <CardContent maxWidth="900px">
-                <Typography variant="body1" color="text.primary">
-                    Lörem ipsum taligt binde. Stereokrati trede nyr nen.
-                    Smygöppna tans, fan om än zorra. Missade tride tagoledes syn
-                    terad. Plast ekotik. Musk ahäling. Du kan vara drabbad.
-                    Donade nydin, fotopol ölanas ifall klimatism bifor och
-                    fasperade. Rovis diamani suprament, medan apovis till laling
-                    att posm. Räktiga opär och minera och förväntningssamhälle
-                    benera krovis. Pönde side. Irar homodade plus beskap och
-                    ditöt, heterovis. Solapöns bineskap infrahung. Supenas
-                    speska givis medan laren. Bebel exor fehåvis, oaktat
-                    bloggare fall.Lörem ipsum taligt binde. Stereokrati trede
-                    nyr nen. Smygöppna tans, fan om än zorra. Missade tride
-                    tagoledes syn terad. Plast ekotik. Musk ahäling. Du kan vara
-                    drabbad. Donade nydin, fotopol ölanas ifall klimatism bifor
-                    och fasperade. Rovis diamani suprament, medan apovis till
-                    laling att posm. Räktiga opär och minera och
-                    förväntningssamhälle benera krovis. Pönde side. Irar
-                    homodade plus beskap och ditöt, heterovis. Solapöns bineskap
-                    infrahung. Supenas speska givis medan laren. Bebel exor
-                    fehåvis, oaktat bloggare fall.
+                <Typography
+                    variant="body1"
+                    color="text.primary"
+                    dangerouslySetInnerHTML={{
+                        __html:
+                            job.description
+                    }}
+                >
+                    {/* {job.description} */}
                 </Typography>
             </CardContent>
             <CardActions
