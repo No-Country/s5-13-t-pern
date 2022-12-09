@@ -7,7 +7,6 @@ ScrapJob es un Scraper que utiliza principalmente la libreria Puppeteer para aut
 
 ![image](https://user-images.githubusercontent.com/59629654/206558192-19822e56-6d50-416a-a221-46f813e6082a.png)
 
-
 ## Tecnologías utilizadas
 
 ### Frontend
@@ -16,7 +15,7 @@ ScrapJob es un Scraper que utiliza principalmente la libreria Puppeteer para aut
 - React.js 
 - CSS
 
-Desplegado en ** - **
+Desplegado en [** Vercel **](https://scrap-job-front-deploy.vercel.app/)
 
 ### Backend
 
@@ -26,7 +25,7 @@ Desplegado en ** - **
 - Puppeteer
 - Cron 
 
-Desplegado en **Render**
+Desplegado en [**Railway**](https://jobscrappernocountry-main-production.up.railway.app)
 
 ## Equipo de desarrollo
 
@@ -43,6 +42,5 @@ Desplegado en **Render**
 ### UX/UI
 - :apple: [Santiago Basualdo Cortez](https://www.behance.net/santiagouxui)
 
+<img src="https://user-images.githubusercontent.com/59629654/206560605-7247ada0-31e0-4bbc-bf86-80f340c49782.png" width="460" align="right" />
 
-![image](https://user-images.githubusercontent.com/59629654/206560605-7247ada0-31e0-4bbc-bf86-80f340c49782.png)
-![image](https://user-images.githubusercontent.com/59629654/206575872-e8188c12-b764-4390-b5c9-29b80f30e9b2.png)
