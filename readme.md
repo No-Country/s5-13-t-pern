@@ -25,7 +25,8 @@ Desplegado en [** Vercel **](https://scrap-job-front-deploy.vercel.app/)
 - Puppeteer
 - Cron 
 
-Desplegado en [**Railway**](https://jobscrappernocountry-main-production.up.railway.app)
+Desplegado en [**Railway**](https://jobscrappernocountry-main-production.up.railway.app/api/v1/jobs/)
+###### Aqui arriba encontraras los datos encontrados por nuestro scraper
 
 ## Equipo de desarrollo
 
