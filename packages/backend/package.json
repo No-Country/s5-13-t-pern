@@ -1,0 +1,38 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js --ignore 'data/*.json'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/No-Country/s5-13-t-pern.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/No-Country/s5-13-t-pern/issues"
+  },
+  "homepage": "https://github.com/No-Country/s5-13-t-pern#readme",
+  "dependencies": {
+    "cron": "^2.1.0",
+    "puppeteer": "^19.2.2",
+    "bcryptjs": "^2.4.3",
+		"dotenv": "^16.0.2",
+		"express": "^4.18.1",
+		"express-validator": "^6.14.2",
+		"jsonwebtoken": "^8.5.1",
+		"pg": "^8.8.0",
+		"pg-hstore": "^2.3.4",
+		"sequelize": "^6.21.4"
+  },
+  "devDependencies": {
+		"nodemon": "^2.0.19"
+	},
+  "nodemonConfig": {
+    "ignore":["data/*.json"]
+  }
+}

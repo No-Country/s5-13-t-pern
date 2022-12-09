@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    margin: 0 auto;
+    flex-grow: 1;
+
+    min-height: 100vh;
+    min-width: 320px;
+    padding: 0;
+}
+
+:root {
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: rgba(194, 194, 194, 1);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+.MuiCardContent-root {
+    display: block;
+}
+
+a {
+    font-weight: 500;
+    color: #2d2d2fcf;
+    text-decoration: inherit;
+}
+a:hover {
+    color: #f0f0f63c;
+}
+
+body {
+    margin: 0 auto;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+.css-1fnnqmd-MuiGrid-root {
+    padding: 0px !important;
+}
