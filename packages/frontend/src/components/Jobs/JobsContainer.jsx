@@ -8,21 +8,34 @@ import { useEffect } from 'react'
 import { jobsTypes } from '../../context/actions/jobsActions'
 import { jobsInitialState, jobsReducer } from '../../context/reducers/jobsReducer'
 import Spinner from '../Spinner'
+import axios from "axios"
 
 const JobsContainer = () => {
     const [state, dispatch] = useReducer(jobsReducer, jobsInitialState);
 
     useEffect(() => {
         dispatch({ type: jobsTypes.LOADING })
-        fetch(import.meta.env.VITE_ENDPOINT_URL + '/data')
-            .then(async (res) => {
+        //fetch(import.meta.env.VITE_ENDPOINT_URL + '/data') para servidor local
+        // fetch(import.meta.env.VITE_ENDPOINT_URL + '/api/v1/jobs', {
+        //     method:"GET",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //       },
+        // })
+        axios.get(
+            `https://jobscrappernocountry-main-production.up.railway.app/api/v1/jobs`
+        )
+            .then((res) => {
                 if (res.status !== 200) return;
-                const data = await res.json();
+                const data = res.data.data;
+                console.log(res.data.data.jobs)
                 dispatch({ type: jobsTypes.GET_ALL_JOBS, payload: data.jobs })
             })
+
+
     }, []);
 
-    if(state.isLoading) return (<Spinner></Spinner>)
+    if (state.isLoading) return (<Spinner></Spinner>)
 
     return (
         <Container>
@@ -50,7 +63,7 @@ const JobsContainer = () => {
             >
                 {state.jobs?.map((job) => (
                     <Grid item xs={1}>
-                        <Link to={`/jobs/${job.id}`} style={{ color: 'transparent', textDecoration: 'inherit'}}>
+                        <Link to={`/jobs/${job.id}`} style={{ color: 'transparent', textDecoration: 'inherit' }}>
                             <JobCard jobs={job} />
                         </Link>
                     </Grid>
