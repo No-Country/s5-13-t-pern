@@ -47,5 +47,6 @@ export default function searchPlatform() {
 }
 
 const jobPlatform = [
-    { title: 'Colombia'},
+    {title: 'Colombia'},
+    {title: 'Venezuela'}
 ]

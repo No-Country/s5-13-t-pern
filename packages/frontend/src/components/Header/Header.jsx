@@ -12,8 +12,27 @@ import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import AdbIcon from '@mui/icons-material/Adb'
+import { Link } from 'react-router-dom'
 
-const pages = ['Publicar un empleo', '¿Quiénes somos?', 'Postulaciones']
+/* const pages = ['¿Quiénes somos?', '¿Cómo funciona Scrapjob?', 'Postulaciones']
+ */ const pages = [
+    {
+        text: '¿Cómo funciona Scrapjob?',
+        url: '/about',
+    },
+    {
+        text: '¿Quiénes somos?',
+        url: '/team',
+    },
+    {
+        text: 'Contacto',
+        url: '/contact',
+    },
+    {
+        text: 'Login',
+        url: '/login',
+    },
+]
 const settings = ['Mi perfil', 'Configuración', 'Dashboard', 'Logout']
 
 function Header() {
@@ -113,8 +132,17 @@ function Header() {
                                     key={page}
                                     onClick={handleCloseNavMenu}
                                 >
-                                    <Typography textAlign="center">
-                                        {page}
+                                    <Typography
+                                        textAlign="center"
+                                        sx={{
+                                            ':hover': {
+                                                bgcolor:
+                                                    'rgba(194, 194, 194, 1)', // theme.palette.primary.main
+                                                color: 'white',
+                                            },
+                                        }}
+                                    >
+                                        <Link to={page.url}>{page.text}</Link>
                                     </Typography>
                                 </MenuItem>
                             ))}
@@ -179,9 +207,13 @@ function Header() {
                                         marginTop: '10px',
                                         color: 'rgba(0,0,0,1)',
                                         textDecoration: 'none',
+                                        ':hover': {
+                                            bgcolor: 'rgba(194, 194, 194, 1)', // theme.palette.primary.main
+                                            color: 'white',
+                                        },
                                     }}
                                 >
-                                    {page}
+                                    <Link to={page.url}>{page.text}</Link>
                                 </Typography>
                             </Button>
                         ))}

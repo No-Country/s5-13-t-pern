@@ -4,6 +4,7 @@ const { app } = require('./app');
 
 // Utils
 const { initModels } = require('./models/initModels');
+const { jobsRouter } = require('./routes/job.routes');
 const { cronJobScrapper } = require('./scraper');
 const { busqueda } = require('./scraper/scraperComputrabajo');
 const { db } = require('./utils/database.util');
@@ -19,18 +20,18 @@ const startServer = async () => {
     initModels();
 
     await db.sync();
-
     await db.sync({force: true})
 
     // Set server to listen
     const PORT = 4000;
 
-    app.listen(PORT, () => {
-      console.log('Express app running!');
+    app.listen(process.env.PORT || PORT, () => {
       cronJobScrapper()
+      console.log('Express app running!');   
     });
+
   } catch (error) {
-    console.log(error);
+    console.log("Error at Server Starting");
   }
 };
 
