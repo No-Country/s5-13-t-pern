@@ -28,6 +28,10 @@ import { Link } from 'react-router-dom'
         text: 'Contacto',
         url: '/contact',
     },
+    {
+        text: 'Login',
+        url: '/login',
+    },
 ]
 const settings = ['Mi perfil', 'Configuración', 'Dashboard', 'Logout']
 
