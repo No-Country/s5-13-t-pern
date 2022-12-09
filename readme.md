@@ -42,5 +42,5 @@ Desplegado en [**Railway**](https://jobscrappernocountry-main-production.up.rail
 ### UX/UI
 - :apple: [Santiago Basualdo Cortez](https://www.behance.net/santiagouxui)
 
-<img src="https://user-images.githubusercontent.com/59629654/206560605-7247ada0-31e0-4bbc-bf86-80f340c49782.png" width="460" align="right" />
-
+![image](https://user-images.githubusercontent.com/59629654/206560605-7247ada0-31e0-4bbc-bf86-80f340c49782.png)
+![image](https://user-images.githubusercontent.com/59629654/206719954-b692cd30-6940-4ed2-90e8-16be86483e82.png)
