@@ -8,7 +8,9 @@ import Jobs from '../pages/Jobs/Jobs'
 import JobDetailCardPage from '../pages/JobDetailCardPage'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
-import Finder from '../pages/Finder'
+import AboutUs from '../pages/AboutUs'
+import Team from '../pages/Team'
+import Contact from '../pages/Contact'
 
 const Routers = () => (
     <BrowserRouter>
@@ -19,7 +21,9 @@ const Routers = () => (
             <Route element={<JobDetailCardPage />} path="/jobs/:idJob" />
             <Route element={<Login />} path="/login" />
             <Route element={<Register />} path="/register" />
-            <Route element={<Finder />} path="/finder" />{' '}
+            <Route element={<AboutUs />} path="/about" />
+            <Route element={<Team />} path="/team" />
+            <Route element={<Contact />} path="/contact" />
         </Routes>
         <Footer />
     </BrowserRouter>
