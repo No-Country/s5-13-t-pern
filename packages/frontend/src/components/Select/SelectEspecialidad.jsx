@@ -19,12 +19,9 @@ const MenuProps = {
 }
 
 const names = [
-    'Panadero',
-    'Verdulero',
-    'Developer',
-    'Contador',
-    'Abogado',
-    'Sastre',
+    'FrontEnd',
+    'BackEnd',
+    'FullStack',
 ]
 
 export default function SelectEspecialidad() {

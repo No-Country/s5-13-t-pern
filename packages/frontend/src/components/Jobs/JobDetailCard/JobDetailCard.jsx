@@ -37,7 +37,7 @@ export default function JobDetailCard({ job }) {
                         Detalles del Trabajo
                     </Typography>
                 </Stack>
-                <CardMedia
+                {/* <CardMedia
                     sx={{
                         display: {
                             xs: 'flex',
@@ -52,7 +52,7 @@ export default function JobDetailCard({ job }) {
                     width="20"
                     image=""
                     alt="LOGO"
-                />
+                /> */}
             </Box>
             <CardContent>
                 <Stack direction={{ md: 'row', xs: 'column' }} flexWrap="wrap">
@@ -144,32 +144,33 @@ export default function JobDetailCard({ job }) {
                     flexDirection: 'row',
                     justifyContent: 'center',
                 }}
-            >
-                <Button
-                    className="boton"
-                    variant="contained"
-                    sx={{
-                        ':hover': {
-                            bgcolor: 'rgba(194, 194, 194, 1)', // theme.palette.primary.main
-                            color: 'white',
-                        },
-                        display: 'flex',
-                        flexDirection: 'row',
-                        justifyContent: 'center',
+            ><a href={job.link} target="_blank" rel="noreferrer">
+                    <Button
+                        className="boton"
+                        variant="contained"
+                        sx={{
+                            ':hover': {
+                                bgcolor: 'rgba(194, 194, 194, 1)', // theme.palette.primary.main
+                                color: 'white',
+                            },
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyContent: 'center',
 
-                        fontFamily: 'Montserrat',
-                        color: 'black',
-                        width: '900px',
-                        height: '46px',
-                        borderRadius: '10px',
-                        fontSize: '25px',
-                        fontWeight: '700',
-                        lineHeight: '36px',
-                        backgroundColor: 'rgba(224, 224, 224, 1)',
-                    }}
-                >
-                    Postular
-                </Button>
+                            fontFamily: 'Montserrat',
+                            color: 'black',
+                            width: '900px',
+                            height: '46px',
+                            borderRadius: '10px',
+                            fontSize: '25px',
+                            fontWeight: '700',
+                            lineHeight: '36px',
+                            backgroundColor: 'rgba(224, 224, 224, 1)',
+                        }}
+                    >
+                        Postular
+                    </Button>
+                </a>
             </CardActions>
         </Card>
     )

@@ -19,10 +19,6 @@ const Job = db.define('job', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  contract: {
-    type: DataTypes.ARRAY(DataTypes.STRING),
-    allowNull: false,
-  },
   description: {
     type: DataTypes.TEXT,
     allowNull: false,

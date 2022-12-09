@@ -1,21 +1,31 @@
 const cron = require('cron');
-const { busqueda } = require('./scraperComputrabajo');
+const { busquedaComputrabajo } = require('./scraperComputrabajo');
+const { busquedaBumeran } = require('./scraperBumeran');
 
-const cronJobScrapper = () =>{ new cron.CronJob('13,40,50 20,10,10 1-31 0-11 0-6', () => {
-    busqueda('desarrollador backend trainee', '');
-    // busqueda('desarrollador frontend', '');
-    // busqueda('desarrollador trainee', '');
-    // busqueda('desarrollador junior', '');
-    // busqueda('desarrollador backend', '');
-    // busqueda('desarrollador backend trainee', '');
-    // busqueda('desarrollador', '');
+const cronJobScrapper = () => {
+  // cron Time is GMT
+  var hours = (new Date()).getHours();
+  var minutes = (new Date()).getMinutes();
+  console.log(hours + " : " + minutes);
+  console.log('Scraper Start with Cron')
+  new cron.CronJob(
+    '00 04 1-31 0-11 0-6',
+    async () => {
+      console.log('Ejecutando...');
+      console.log(new Date().toLocaleString());
+      await busquedaComputrabajo('frontend', '');
+      await busquedaComputrabajo('backend', '');
+      await busquedaBumeran('backend', '');
+      await busquedaBumeran('frontend', '');
 
-    console.log('Ejecutando...');
-    console.log(new Date().toLocaleString())
-},
-null,
-true);
-}
+      console.log('Finished');
+      console.log(new Date().toLocaleString());
+    },
+    null,
+    true
+  );
+};
 
+module.exports = { cronJobScrapper };
 
-module.exports = { cronJobScrapper }
+//cronJobScrapper()

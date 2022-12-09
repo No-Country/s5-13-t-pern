@@ -10,6 +10,8 @@ import Box1 from '../../components/Boxes/Box1'
 import Box2 from '../../components/Boxes/Box2'
 import Box3 from '../../components/Boxes/Box3'
 import SearchBox from '../../context/SearchBox'
+import SearchCargo from '../../context/SearchCargo'
+import SearchPlace from '../../context/SearchPlace.jsx'
 
 export default function Home() {
     return (
@@ -110,7 +112,7 @@ export default function Home() {
                     >
                         <Box fullWidth>
                             <Typography className="label">Cargo</Typography>
-                            <SearchBox
+                            <SearchCargo
                                 fullWidth
                                 sx={{
                                     fontFamily: 'Montserrat',
@@ -123,12 +125,12 @@ export default function Home() {
                         </Box>
                         <Box>
                             <Typography className="label">Lugar</Typography>
-                            <SearchBox className="box2" />
+                            <SearchPlace className="box2" />
                         </Box>
-                        <Box>
+                        {/* <Box>
                             <Typography className="label">Distancia</Typography>
                             <SearchBox className="box3" />
-                        </Box>
+                        </Box> */}
 
                         <Link to="/jobs">
                             <Button
